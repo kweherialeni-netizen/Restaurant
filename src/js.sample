@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<h1>
+    what can js do
+</h1>
+<p id="leni">DONT PRESS THE BUTTON</p>
+<button type=" button" onclick="document.getElementById(leni)".innerhtml=67 >button</button
+
+
+
+</html>
