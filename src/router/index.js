@@ -46,8 +46,8 @@ const router = createRouter({
       component:orders
     },
     {
-      name:'Reservation',
-      path:'/Reservation',
+      name:'reservations',
+      path:'/reservations',
       component:Reservation
 
     },

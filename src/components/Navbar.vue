@@ -5,7 +5,7 @@ const isloggedin= true
 
 <template>
 <v-app-bar color="pink-lighten-1">
-<v-app-bar-title>Pika Meals</v-app-bar-title>
+<v-app-bar-title>Pika Meals Steak House</v-app-bar-title>
 
 <v-btn to="/" > Home</v-btn>
 <v-btn to="/menu">Menu </v-btn>

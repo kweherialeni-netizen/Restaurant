@@ -7,10 +7,10 @@
 <v-container>
     <v-row>
 <v-carousel>
-<v-carousel-item src="/images/lily-banse--YHSwy6uqvk-unsplash.jpg"></v-carousel-item>
-<v-carousel-item src="/images/stefan-johnson-xIFbDeGcy44-unsplash.jpg"></v-carousel-item>
-<v-carousel-item src="/images/mike-dorner-sf_1ZDA1YFw-unsplash.jpg"></v-carousel-item>
-<v-carousel-item src="/images/thought-catalog-9aOswReDKPo-unsplash.jpg"></v-carousel-item>
+<v-carousel-item src="/images/home/lily-banse--YHSwy6uqvk-unsplash.jpg"></v-carousel-item>
+<v-carousel-item src="/images/home/stefan-johnson-xIFbDeGcy44-unsplash.jpg"></v-carousel-item>
+<v-carousel-item src="/images/home/mike-dorner-sf_1ZDA1YFw-unsplash.jpg"></v-carousel-item>
+<v-carousel-item src="/images/home/thought-catalog-9aOswReDKPo-unsplash.jpg"></v-carousel-item>
 </v-carousel>
     </v-row>
 </v-container>
@@ -19,7 +19,7 @@
 <v-container>
     <v-row>
         <v-card>
-            <p class="text-h4"> <b>Welcome to Pika Meals</b></p>
+            <p class="text-h4"> <b>Welcome to Pika Meals Steak House</b></p>
             <p class="text-h6"> We Cook, You Eat 
 Our philosophy is simple: we cook, you eat. Forget the grocery store lines, the endless chopping, and the messy kitchen. We deliver delicious, chef-prepared meals right to your door. All you have to do is heat them up and enjoy.</p>
         </v-card>
@@ -32,7 +32,7 @@ Our philosophy is simple: we cook, you eat. Forget the grocery store lines, the 
         <v-col md= "4">
         <v-card color="pink-lighten-1">
             <v-card-title>Our story</v-card-title>
-            <v-img src="/images/steve-johnson-N-MqWXXZvNY-unsplash.jpg"
+            <v-img src="/images/home/aninge-fetzer-nx601miehyA-unsplash.jpg"
                 class="align-end text-white"
                 height="200"
                 cover>
@@ -47,7 +47,7 @@ Our philosophy is simple: we cook, you eat. Forget the grocery store lines, the 
  <v-col md= "4">
         <v-card color="pink-lighten-1">
              <v-card-title>Holiday Eats </v-card-title>
-            <v-img src="/images/mike-dorner-J5UkR-L-HB0-unsplash.jpg"
+            <v-img src="/images/home/karina-b-T8EZ42yL8VM-unsplash.jpg"
                 class="align-end text-white"
                 height="200"
                 cover>
@@ -64,7 +64,7 @@ Our philosophy is simple: we cook, you eat. Forget the grocery store lines, the 
          <v-col md= "4">
         <v-card color="pink-lighten-1">
             <v-card-title>Pika meals loyalty programme</v-card-title>
-            <v-img src="/images/mike-dorner-wWEpM0QNK5E-unsplash.jpg"
+            <v-img src="/images/home/mike-dorner-wWEpM0QNK5E-unsplash.jpg"
                 class="align-end text-white"
                 height="200"
                 cover>
@@ -86,22 +86,20 @@ Our philosophy is simple: we cook, you eat. Forget the grocery store lines, the 
     <v-row>
         <v-footer class="text-center d-flex flex-column ga-2 py-4" color="pink-lighten-1">
                 <div class="d-flex ga-3">
-                <v-btn icon="'mdi-facebook'" density="comfortable" variant="text" ></v-btn>
-                <v-btn icon="'mdi-twitter'" density="comfortable" variant="text" ></v-btn>
-                <v-btn icon="'mdi-linkepurple-lighten-1din'" density="comfortable" variant="text" ></v-btn>
-                <v-btn icon="'mdi-instagram'" density="comfortable" variant="text" ></v-btn>
+                <v-btn icon="mdi-facebook" density="comfortable" variant="text" ></v-btn>
+                <v-btn icon="mdi-twitter" density="comfortable" variant="text" ></v-btn>
+                <v-btn icon="mdi-linkepurple-lighten-1din" density="comfortable" variant="text" ></v-btn>
+                <v-btn icon="mdi-instagram" density="comfortable" variant="text" ></v-btn>
                 </div>
 
                 <v-divider class="my-2" thickness="2" width="50"></v-divider>
 
-                <div class="text-caption font-weight-regular opacity-60">
-                Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                </div>
+                
 
                 <v-divider></v-divider>
 
                 <div>
-                {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+                {{ new Date().getFullYear() }} — <strong>Pika Meals</strong>
                 </div>
             </v-footer>
     </v-row>
