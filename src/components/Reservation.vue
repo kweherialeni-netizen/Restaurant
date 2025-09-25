@@ -1,13 +1,54 @@
 <script setup>
+// imports
+import{ref} from 'vue'
+
+const showMenu =ref(false)
+// const reservationsTime =ref(null)
+
+// models
+const name =ref(null)
+const phone = ref(null)
+const noOfPeople= ref(null)
+const reservationDate= ref(null)
+const reservationTime =ref (null)
+const location = ref(null)
+
+// functions
+// make reservation - add details to local  storage
+function makeReservation (){
+const newReservation ={
+    name:name.value,
+    phone:phone.value,
+    noOfPeople:noOfPeople.value,
+    Date:reservationDate.value,
+    time:reservationTime.value,
+    location:location.value,
+
+}
+try{
+    // save data on browser
+    localStorage.setItem(
+        "reservation",
+        JSON.stringify(newReservation)
+
+    );
+    // to do send data to backend
+} catch (err) {
+    console.error('reservation process failed',err)
+}
+
+}
+
+
 
 </script>
 
 <template>
 <h1>Reservations</h1>
-<v-container>
+<v-container fluid class="d-flex fill-height" align=" center"> 
     <v-row>
         <v-col>
-            <v-card max width="600">
+            <v-card max width="600" class="pa-6 rounded-lg" justify="center">
 
                  <v-row>
                         <p class="text-h5">Make a Reservation</p>
@@ -15,37 +56,41 @@
                     <v-row>
                         <v-col md="6">Name</v-col>
                         <v-col md="6">
-                            <v-text-field label="Name" ></v-text-field>
+                            <v-text-field label="Name" v-model="name"></v-text-field>
                         </v-col>
                     </v-row>
                    <v-row>
                         <v-col md="6">Phone</v-col>
                         <v-col md="6">
-                            <v-text-field label="2541234456" ></v-text-field>
+                            <v-text-field type=number v-model="phone" ></v-text-field>
                         </v-col>
                     </v-row>
 
                      <v-row>
                         <v-col md="4">No. of People</v-col>
                         <v-col md="8">
-                            <v-text-field></v-text-field>
+                            <v-text-field type=number v-model="noOfPeople"></v-text-field>
                         </v-col>
                     </v-row>
                     <v-row>
                         <v-col md="4">Date</v-col>
                         <v-col md="8">
-                            <v-text-field></v-text-field>
+                            <v-date-input v-model="reservationDate"></v-date-input>
                         </v-col>
                     </v-row>
                     <v-row>
                         <v-col md="4">Time</v-col>
                         <v-col md="8">
-                            <v-text-field></v-text-field>
+                                <v-text-field :model-value="reservationTime" label="Picker in menu" prepend-icon="mdi-clock-time-four-outline" readonly >
+    <v-menu v-model="showMenu" :close-on-content-click="false" activator="parent" min-width="0" >
+        <v-time-picker v-model="reservationTime"></v-time-picker>
+    </v-menu>
+</v-text-field>
                         </v-col>
                         <v-row>
                         <v-col md="4">Location</v-col>
                         <v-col md="8">
-                            <v-radio-group>
+                            <v-radio-group v-model="location">
                             <v-row>
                                 <v-col md="4">
                                     <v-radio label="Madaraka" value="Madaraka"></v-radio>
@@ -64,7 +109,7 @@
 
  <v-row>
                          <v-col align="center">
-                            <v-btn>Make Reservation</v-btn>
+                            <v-btn color="pink-lighten-1" @click="makeReservation()">Make Reservation </v-btn>
                         </v-col>
                     </v-row>
                 </v-card>
