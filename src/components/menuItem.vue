@@ -1,22 +1,38 @@
 <script setup>
-
+import { ref } from "vue";
 import { useMenuStore } from '../router/menu.js';
 const menuStore = useMenuStore()
 const menuItem = menuStore.selectedMenuItem
 
+const quantity = ref(null)
 
-
-
-
-// const menuItem = {
-    
-//         name:'well done steak',
-//         image:"/images/menu/alex-munsell-Yr4n8O_3UPc-unsplash.jpg",
-//         price:670,
-//         description:'proper well cooked and seasoned steak',
-//         category:'main meal'
 
     // }
+    function order(){
+        let existingOrder =JSON.parse(
+            localStorage.getItem("order")
+        )
+        if (existingOrder ==null){
+            existingOrder=[]
+        }
+        let currentOrder={
+            menuItem:menuItem,
+            quantity:quantity.value,
+            paymentstatus: false,
+            user:JSON.parse(localStorage.getItem("signUpData"))
+        }
+        existingOrder.push(currentOrder)
+
+ try {
+     localStorage.setItem(
+        "order",
+        JSON.stringify(existingOrder))
+    
+  } catch (err) {
+    console.error("order process failed", err);
+  }
+        
+    }
 </script>
 
 <template>
@@ -41,6 +57,7 @@ const menuItem = menuStore.selectedMenuItem
                     <v-col md="2">Quantity</v-col>
                     <v-col md="4">
                         <v-number-input
+                        v-model="quantity"
                           control-variant="split"
                           density="compact"
                           :min="1"
@@ -52,7 +69,7 @@ const menuItem = menuStore.selectedMenuItem
                     <!-- Quantity <v-text-field></v-text-field> -->
                 </v-card-text>
                     <v-card-actions>
-                        <v-btn color="pink-lighten-1" variant="elevated">Order</v-btn>
+                        <v-btn color="pink-lighten-1" variant="elevated" @click="order()">Order</v-btn>
                     </v-card-actions>
                 </v-card>
 
