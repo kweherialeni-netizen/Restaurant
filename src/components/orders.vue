@@ -16,7 +16,7 @@ const orders=JSON.parse(localStorage.getItem("order"))
         <v-card  class="pa-6 rounded-lg"> 
             <v-card-text>{{ item.menuItem.name }}</v-card-text>
             <v-card-subtitle>{{ item.menuItem.quantity }}</v-card-subtitle>
-            <v-card-title>total:{{ item.quantity * item.menuItem.price }}</v-card-title>
+            <v-card-title>total:{{ item.quantity * item.menuI tem.price }}</v-card-title>
             <v-card-actions>
                 <v-btn>Remove</v-btn>
             </v-card-actions>
