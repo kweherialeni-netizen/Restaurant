@@ -9,6 +9,7 @@ import orders from '@/components/orders.vue'
 import signUp from '@/components/signUp.vue'
 import Reservation from '@/components/Reservation.vue'
 import userProfile from '@/components/userProfile.vue'
+import admin from '@/components/admin.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -60,6 +61,11 @@ const router = createRouter({
       name:'signUp',
       path:'/signUp',
       component:signUp
+    },
+    {
+      name:'admin',
+      path:'/admin',
+      component:admin
     },
   ],
 })
